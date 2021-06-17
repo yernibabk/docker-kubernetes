@@ -1,0 +1,109 @@
+
+Steps to install Docker CE:
+
+Step-1:
+
+ yum install yum-utils device-mapper-persistent-data lvm2
+Step-2:
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+Step-3:
+yum install docker-ce
+
+Step-4:
+
+sudo systemctl start docker
+sudo systemctl status docker
+sudo systemctl enable docker
+docker -v
+
+-----------------------------------------------------------------------------------
+
+
+open vmware workstation 15 payer and choose CentOS7 64-bit (vmware virtual marchine configuration)
+
+choose user: not listed
+user name: root
+pwd: redhat
+
+cmd: ifconfig
+192.168.221.128
+
+open putt and connect above ip
+
+https://notepad.pw/soci2
+
+Steps to install Docker CE:
+
+Step-1: (lineux storage depdendies - docker to understand volumes) it linux prerequisits
+
+ yum install yum-utils device-mapper-persistent-data lvm2
+Step-2: (adding the docker repo to linux)
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+Step-3:
+yum install docker-ce
+
+Step-4:
+
+sudo systemctl start docker
+sudo systemctl status docker
+sudo systemctl enable docker
+docker -v
+
+=======================================
+to check repos in linux -> cd /etc/yum.repos.d/
+> ls
+
+
+to check docker status:
+> docker -v
+To check the overall docker status
+>docker info
+>systemctl status docker
+>systemctl start docker
+>systemctl enable docker
+
+
+To check the docker files after installation
+>cd /var/lib/docker
+>ls
+
+To check the images pull from docker hum
+> docker images
+
+All docker commands at: https://docs.docker.com/engine/reference/commandline/pull/
+
+
+Run a command in a new container
+> docker run --name <containername> -p <hostport>:<containerport> <imagename> 
+-d run as background
+
+
+To list the running containers
+>docker ps
+
+To check conatiner (live and stopped once)
+>docker ps -a
+
+To run the tomcat at the background:
+> docker run -d  tomcat
+
+
+To return low level information of docker objects: (tomcat container ip address)
+
+docker inspect <containername> | grep IPA
+docker inspect <containerid> | grep IPA
+
+==============================================================
+
+
+
+
+
+
+
+
+
